@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b6sy8p7px0iat"]
+
+[ext_resource type="Texture2D" uid="uid://c1f1yrqs1lspn" path="res://assets/click-blue1.png" id="1_ihwve"]
+[ext_resource type="Texture2D" uid="uid://b5jgxdbtfruwc" path="res://assets/click-blue2.png" id="2_qok3d"]
+[ext_resource type="Texture2D" uid="uid://b8olx2l38qmnn" path="res://assets/blue1.png" id="3_w2yip"]
+[ext_resource type="Texture2D" uid="uid://p84fw0vm2m2k" path="res://assets/blue2.png" id="4_4vuki"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ihwve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qok3d")
+}],
+"loop": 1,
+"name": &"barking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w2yip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4vuki")
+}],
+"loop": 1,
+"name": &"idling",
+"speed": 5.0
+}]

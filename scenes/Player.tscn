@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bshvar833a4u8"]
+
+[ext_resource type="Script" uid="uid://cotvthuvrj0ra" path="res://player.gd" id="1_bruh7"]
+[ext_resource type="Texture2D" uid="uid://5gberr8ns8qc" path="res://assets/Player/idle_E1.png" id="3_70d11"]
+[ext_resource type="Texture2D" uid="uid://1et7ujyjvhgs" path="res://assets/Player/idling_N1.png" id="3_khinc"]
+[ext_resource type="Texture2D" uid="uid://cm7t42nkdwov" path="res://assets/Player/idling_N2.png" id="4_bruh7"]
+[ext_resource type="Texture2D" uid="uid://ces0ubt0i2p4a" path="res://assets/Player/idle_E2.png" id="4_cw2d6"]
+[ext_resource type="Texture2D" uid="uid://bvrkcrlhunld" path="res://assets/Player/idling_S1.png" id="5_6eyey"]
+[ext_resource type="Texture2D" uid="uid://xs1x04eutnw8" path="res://assets/aseprite wips/mockup2.png" id="5_70d11"]
+[ext_resource type="Texture2D" uid="uid://cqtejm4y37lyl" path="res://assets/aseprite wips/mockup3.png" id="6_cw2d6"]
+[ext_resource type="Texture2D" uid="uid://d4gji30lkegyp" path="res://assets/Player/idling_S2.png" id="6_d3wef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cmo"]
+size = Vector2(26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w344y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_70d11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cw2d6")
+}],
+"loop": 1,
+"name": &"idling_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_khinc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bruh7")
+}],
+"loop": 1,
+"name": &"idling_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6eyey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d3wef")
+}],
+"loop": 1,
+"name": &"idling_S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_70d11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cw2d6")
+}],
+"loop": 1,
+"name": &"idling_W",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1520352153 groups=["Player"]]
+script = ExtResource("1_bruh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305458035]
+position = Vector2(13, 13)
+shape = SubResource("RectangleShape2D_r8cmo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1893867347]
+position = Vector2(13, 13)
+sprite_frames = SubResource("SpriteFrames_w344y")
+animation = &"idling_S"

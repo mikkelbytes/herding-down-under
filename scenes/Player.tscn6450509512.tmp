@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bshvar833a4u8"]
+
+[ext_resource type="SpriteFrames" uid="uid://b6sy8p7px0iat" path="res://barking_blue.tres" id="2_v6fml"]
+[ext_resource type="Script" uid="uid://c6c3o3j8l7h8c" path="res://scenes/player.gd" id="3_kne1u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysdum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w344y"]
+size = Vector2(50, 50)
+
+[node name="Player" type="AnimatedSprite2D" unique_id=443809169]
+sprite_frames = SubResource("SpriteFrames_ysdum")
+script = ExtResource("3_kne1u")
+speed = null
+
+[node name="PlayerNode" type="Node2D" parent="." unique_id=1580351014]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="PlayerNode" unique_id=783844955]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNode/CharacterBody2D" unique_id=2002047403]
+shape = SubResource("RectangleShape2D_w344y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerNode/CharacterBody2D" unique_id=953192405]
+sprite_frames = ExtResource("2_v6fml")
+animation = &"idling"
+frame_progress = 0.48329368
+
+[node name="TextureRect" type="TextureRect" parent="PlayerNode" unique_id=276137911]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cptuhrbuti4um"]
+
+[ext_resource type="Texture2D" uid="uid://btfpog3w2te2j" path="res://assets/aseprite wips/trial.png" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bshvar833a4u8" path="res://scenes/Player.tscn" id="2_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://d2fr86ucp04te" path="res://scenes/cow.tscn" id="3_ppgk2"]
+
+[sub_resource type="GDScript" id="GDScript_hh455"]
+script/source = "extends Node2D
+
+const COW_SCENE = preload(\"res://scenes/cow.tscn\")
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var num_cows = randf_range(3, 6)
+	
+	for i in range(num_cows - 1):
+		spawn_cows()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func spawn_cows() -> void:
+	var cow = COW_SCENE.instantiate()
+	cow.position = Vector2(700, 700)
+	add_child(cow)
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w344y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cmo"]
+size = Vector2(666, 32)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnkhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnkhk"]
+size = Vector2(26, 381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w344y"]
+size = Vector2(640, 360)
+
+[node name="level" type="Node2D" unique_id=1646774193]
+script = SubResource("GDScript_hh455")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1403720159]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D" unique_id=577807500]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D/StaticBody2D" unique_id=878671152]
+polygon = PackedVector2Array(371, 199, 371, 235, 404, 188, 450, 210, 492, 204, 495, 165, 449, 171, 398, 152, 369, 199)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D/StaticBody2D" unique_id=2016298168]
+polygon = PackedVector2Array(201, 33, 200, 65, 218, 97, 285, 57, 284, 19, 214, 56)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D/StaticBody2D" unique_id=501064905]
+polygon = PackedVector2Array(263, 242, 330, 261, 333, 296, 398, 295, 409, 261, 409, 320, 403, 334, 334, 335, 331, 303, 268, 283)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D/StaticBody2D" unique_id=1966769774]
+polygon = PackedVector2Array(34, 134, 115, 151, 116, 193, 45, 238, 50, 195, 23, 193)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/StaticBody2D" unique_id=1048028272]
+position = Vector2(229, 173)
+shape = SubResource("CapsuleShape2D_w344y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D/StaticBody2D" unique_id=980003153]
+position = Vector2(323, 6)
+shape = SubResource("RectangleShape2D_r8cmo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D/StaticBody2D" unique_id=1669452637]
+position = Vector2(111, 265)
+shape = SubResource("CapsuleShape2D_gnkhk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D/StaticBody2D" unique_id=1574094297]
+position = Vector2(322, 354)
+shape = SubResource("RectangleShape2D_r8cmo")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D/StaticBody2D" unique_id=216154491]
+position = Vector2(3, 180.5)
+shape = SubResource("RectangleShape2D_gnkhk")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Area2D/StaticBody2D" unique_id=19677157]
+polygon = PackedVector2Array(533, 22, 580, 63, 578, 99, 623, 122, 624, 81)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D/StaticBody2D" unique_id=1512417177]
+position = Vector2(637, 164)
+shape = SubResource("RectangleShape2D_gnkhk")
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Area2D/StaticBody2D" unique_id=810848814]
+polygon = PackedVector2Array(522, 339, 580, 310, 566, 257, 628, 228, 628, 337)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=967627442]
+position = Vector2(320, 180)
+shape = SubResource("RectangleShape2D_w344y")
+
+[node name="Trial" type="Sprite2D" parent="Area2D" unique_id=1846718183]
+position = Vector2(320, 180)
+texture = ExtResource("1_w8frs")
+
+[node name="Cow" parent="." unique_id=1338038731 instance=ExtResource("3_ppgk2")]
+position = Vector2(593, 141)
+scale = Vector2(0.46148518, 0.46148518)
+
+[node name="Player" parent="." unique_id=1520352153 instance=ExtResource("2_mx8sn")]
+position = Vector2(540, 191)

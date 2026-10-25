@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://pma3736obhyn"]
+
+[ext_resource type="Texture2D" uid="uid://cqouyn4d1lsfk" path="res://assets/pen_test.png" id="1_ngeja"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_w344y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w344y"]
+size = Vector2(300, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cmo"]
+size = Vector2(20, 83.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnkhk"]
+size = Vector2(28, 465)
+
+[node name="Pen" type="Area2D" unique_id=1752828528]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=324607749]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_w344y")
+
+[node name="PenTest" type="Sprite2D" parent="." unique_id=319914146]
+position = Vector2(150, 270)
+texture = ExtResource("1_ngeja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120540414]
+position = Vector2(150, 19)
+shape = SubResource("RectangleShape2D_w344y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=311864333]
+position = Vector2(150, 522)
+shape = SubResource("RectangleShape2D_w344y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1766167060]
+position = Vector2(290, 79.75)
+shape = SubResource("RectangleShape2D_r8cmo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=201708797]
+position = Vector2(290, 461)
+shape = SubResource("RectangleShape2D_r8cmo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1294442313]
+position = Vector2(14, 270.5)
+shape = SubResource("RectangleShape2D_gnkhk")

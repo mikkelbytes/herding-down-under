@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c1ihg5v71oke0"]
+
+[ext_resource type="Script" uid="uid://kq58jts7e065" path="res://scenes/title_screen.gd" id="1_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://cyih5iqyl4jfb" path="res://assets/aseprite wips/title.png" id="1_s4lrb"]
+[ext_resource type="FontFile" uid="uid://f4lf2jlkrbr1" path="res://assets/dogica/TTF/dogicapixel.ttf" id="3_dc4i4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx8sn"]
+bg_color = Color(0.23137255, 0.14901961, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppgk2"]
+bg_color = Color(0.43, 0.3225, 0.1075, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="TitleScreen" type="Control" unique_id=46990791]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgrm8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=591769901]
+layout_mode = 1
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("1_s4lrb")
+
+[node name="CenterContainer" type="MarginContainer" parent="." unique_id=2009174058]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -72.0
+offset_right = 39.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0, 0)
+mouse_filter = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="StartButton" type="Button" parent="CenterContainer" unique_id=1295345397]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_pivot_ratio = Vector2(0, 0)
+theme_override_fonts/font = ExtResource("3_dc4i4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mx8sn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ppgk2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ppgk2")
+action_mode = 0
+text = "START"
+
+[connection signal="pressed" from="CenterContainer/StartButton" to="." method="_on_start_button_pressed"]

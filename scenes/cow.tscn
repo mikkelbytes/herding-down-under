@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://d2fr86ucp04te"]
+
+[ext_resource type="Script" uid="uid://cgo1xwrjp6riw" path="res://cow.gd" id="1_8skmv"]
+[ext_resource type="Texture2D" uid="uid://bnofi4i5naayj" path="res://assets/Cattle/a_cow_1r.png" id="1_hh455"]
+[ext_resource type="Texture2D" uid="uid://1kytaagpm2ln" path="res://assets/Cattle/cow_1.png" id="1_yj05v"]
+[ext_resource type="Texture2D" uid="uid://6aum3q8dqwjy" path="res://assets/Cattle/a_cow_2r.png" id="2_8skmv"]
+[ext_resource type="Texture2D" uid="uid://blfht2c3ute" path="res://assets/Cattle/cow_2.png" id="2_m1w7b"]
+[ext_resource type="Texture2D" uid="uid://ds7t5cx4in6or" path="res://assets/Cattle/s_cow_1r.png" id="5_xabja"]
+[ext_resource type="Texture2D" uid="uid://8fld540yxcby" path="res://assets/Cattle/s_cow_2r.png" id="6_flufj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w344y"]
+size = Vector2(99, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k1aj"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"annoyed_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hh455")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8skmv")
+}],
+"loop": 1,
+"name": &"annoyed_W",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idling_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("1_yj05v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m1w7b")
+}],
+"loop": 1,
+"name": &"idling_W",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"spooked_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xabja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_flufj")
+}],
+"loop": 1,
+"name": &"spooked_W",
+"speed": 5.0
+}]
+
+[node name="Cow" type="CharacterBody2D" unique_id=2054276380 node_paths=PackedStringArray("player") groups=["Player"]]
+script = ExtResource("1_8skmv")
+player = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1349742907]
+position = Vector2(49.5, 50)
+shape = SubResource("RectangleShape2D_w344y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=607249253]
+position = Vector2(50, 46)
+sprite_frames = SubResource("SpriteFrames_3k1aj")
+animation = &"annoyed_W"
