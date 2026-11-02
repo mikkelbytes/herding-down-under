@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cgp42hjfc742k"]
+
+[ext_resource type="Script" uid="uid://b2waj0klvxq3l" path="res://scripts/level-timer.gd" id="1_ub0u7"]
+[ext_resource type="FontFile" uid="uid://by17u6hvng5vh" path="res://assets/Fonts/dogica.ttf" id="2_6h2gf"]
+
+[node name="TimerNode" type="Control" unique_id=1419984303]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ub0u7")
+
+[node name="Timer" type="Timer" parent="." unique_id=1811844156]
+autostart = true
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=2008658467]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 25.0
+theme_override_fonts/normal_font = ExtResource("2_6h2gf")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+justification_flags = 162

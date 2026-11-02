@@ -22,4 +22,4 @@ func spawn_cattle():
 		add_child(new_cow)
 		
 		
-		new_cow.position = Vector2(randf_range(-40, 40), randf_range(-40, 40))
+		new_cow.position = Vector2(randf_range(-10, 10), randf_range(-10, 10))
