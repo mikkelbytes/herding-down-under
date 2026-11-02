@@ -30,7 +30,7 @@ mouse_cursor/custom_image="uid://cid6fy8dev27t"
 
 [global_group]
 
-Player=""
+player=""
 
 [input]
 

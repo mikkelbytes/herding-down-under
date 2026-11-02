@@ -60,7 +60,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1520352153 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1520352153 groups=["player"]]
 script = ExtResource("1_bruh7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305458035]

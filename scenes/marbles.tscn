@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://fruiawhiidcy"]
+
+[ext_resource type="Texture2D" uid="uid://dtn7ft74fgphd" path="res://assets/aseprite wips/marbles.png" id="1_jw047"]
+[ext_resource type="Texture2D" uid="uid://dh3c4iqxigei2" path="res://assets/UI/heart.png" id="2_pseyd"]
+
+[sub_resource type="GDScript" id="GDScript_w344y"]
+resource_name = "heart_particles"
+script/source = "extends CharacterBody2D
+
+@onready var click_particles: GPUParticles2D = $ClickParticles
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			click_particles.emitting = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w344y"]
+size = Vector2(18, 26)
+
+[sub_resource type="Curve" id="Curve_7pn4f"]
+_data = [Vector2(0.015105747, 1), 0.0, 0.0, 0, 0, Vector2(0.5075529, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_r8cmo"]
+curve = SubResource("Curve_7pn4f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w344y"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 65.0
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_r8cmo")
+
+[node name="Marbles" type="CharacterBody2D" unique_id=1871270745]
+script = SubResource("GDScript_w344y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=206889842]
+position = Vector2(13, 13.000001)
+scale = Vector2(1, 0.96153843)
+texture = ExtResource("1_jw047")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690267108]
+visible = false
+position = Vector2(14, 13)
+shape = SubResource("RectangleShape2D_w344y")
+
+[node name="ClickParticles" type="GPUParticles2D" parent="." unique_id=2029831917]
+position = Vector2(13, 7)
+emitting = false
+amount = 12
+texture = ExtResource("2_pseyd")
+one_shot = true
+speed_scale = 0.33
+explosiveness = 0.75
+randomness = 0.15
+process_material = SubResource("ParticleProcessMaterial_w344y")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://t8u13amem6a1"]
+
+[ext_resource type="Script" uid="uid://cjs2opcp475tf" path="res://scenes/cattle_spawner.gd" id="1_e54jl"]
+[ext_resource type="PackedScene" uid="uid://d2fr86ucp04te" path="res://scenes/cow.tscn" id="2_gafxl"]
+
+[node name="CattleSpawner" type="Node2D" unique_id=413020254]
+script = ExtResource("1_e54jl")
+cow_scene = ExtResource("2_gafxl")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=235474103]
+position = Vector2(0, -1)

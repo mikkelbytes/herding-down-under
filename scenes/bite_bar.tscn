@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://pvbmek4q6ykp"]
+
+[ext_resource type="Texture2D" uid="uid://l03ra27uj7v2" path="res://assets/UI/bitebar.png" id="1_o2phq"]
+[ext_resource type="Texture2D" uid="uid://derrrlnnjj87d" path="res://assets/UI/vertical_bar.png" id="2_n68hx"]
+[ext_resource type="AudioStream" uid="uid://dpwvgty0cv7br" path="res://assets/Audio/bark.wav" id="3_k5hx6"]
+
+[sub_resource type="GDScript" id="GDScript_r8cmo"]
+resource_name = "bitebar"
+script/source = "extends Node2D
+
+@onready var background: Sprite2D = $background
+@onready var pointer: Sprite2D = $pointer
+@onready var start: Marker2D = $start
+@onready var end: Marker2D = $end
+@onready var safestart: Marker2D = $safestart
+@onready var safeend: Marker2D = $safeend
+@onready var bark: AudioStreamPlayer = $bark
+
+var direction = 1 
+
+func _process(delta: float) -> void:
+	if pointer.position.x <= start.position.x: 
+		direction = 1
+	elif pointer.position.x >= end.position.x:
+		direction = -1
+	pointer.position.x += direction
+
+	if Input.is_action_pressed(\"ui_accept\"):
+		if pointer.position.x >= safestart.position.x and pointer.position.x <= safeend.position.x:
+			## successful bite func here
+			bark.play()
+"
+
+[node name="BiteBar" type="Node2D" unique_id=782276729]
+script = SubResource("GDScript_r8cmo")
+
+[node name="background" type="Sprite2D" parent="." unique_id=174564518]
+position = Vector2(77, 16)
+scale = Vector2(1, 1.1666666)
+texture = ExtResource("1_o2phq")
+
+[node name="pointer" type="Sprite2D" parent="." unique_id=1494612136]
+position = Vector2(75, -11.999999)
+scale = Vector2(1, 1.1666666)
+texture = ExtResource("2_n68hx")
+centered = false
+
+[node name="start" type="Marker2D" parent="." unique_id=1008375054]
+position = Vector2(8, 16)
+
+[node name="end" type="Marker2D" parent="." unique_id=1362752441]
+position = Vector2(147, 16)
+
+[node name="safestart" type="Marker2D" parent="." unique_id=768978396]
+position = Vector2(71, 16)
+
+[node name="safeend" type="Marker2D" parent="." unique_id=2073928423]
+position = Vector2(83, 16)
+
+[node name="bark" type="AudioStreamPlayer" parent="." unique_id=1231501485]
+stream = ExtResource("3_k5hx6")

@@ -2,6 +2,7 @@ extends Control
 
 const START_SCENE_PATH = "res://scenes/level.tscn"
 
+
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file(START_SCENE_PATH)
 
