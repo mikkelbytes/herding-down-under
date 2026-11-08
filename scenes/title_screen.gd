@@ -1,7 +1,7 @@
 extends Control
 
 const START_SCENE_PATH = "res://scenes/level.tscn"
-
+@export var title_screen: Control
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file(START_SCENE_PATH)
@@ -20,7 +20,3 @@ func _unhandled_input(event: InputEvent) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.

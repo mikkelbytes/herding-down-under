@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dsxddyjkuj7b1"]
+
+[ext_resource type="Script" uid="uid://ccnrv5hq88csj" path="res://scripts/game_over_trial.gd" id="1_6hdwi"]
+[ext_resource type="FontFile" uid="uid://by17u6hvng5vh" path="res://assets/Fonts/dogica.ttf" id="2_iwayr"]
+
+[sub_resource type="Theme" id="Theme_r8cmo"]
+default_font = ExtResource("2_iwayr")
+default_font_size = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j051g"]
+resource_name = "tryagain"
+bg_color = Color(0.36054423, 0.39189866, 0.20769136, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gpuo"]
+resource_name = "tryagain-press"
+bg_color = Color(0.26825, 0.29, 0.1595, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3oh2"]
+bg_color = Color(0.528, 0.6, 0.384, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 1
+
+[node name="GameOverTrial" type="Control" unique_id=1034714420]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hdwi")
+
+[node name="BGColorRect" type="ColorRect" parent="." unique_id=1778630209]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.8451559, 0.45208228, 0.3172299, 1)
+
+[node name="GameOverText" type="RichTextLabel" parent="." unique_id=1835678381]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.2644831, 0.162819, 0.010916199, 1)
+theme_override_fonts/normal_font = ExtResource("2_iwayr")
+theme_override_font_sizes/normal_font_size = 50
+text = "Game Over"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1290775744]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -105.399994
+offset_right = 58.0
+offset_bottom = -86.39996
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_r8cmo")
+theme_override_constants/outline_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_j051g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8gpuo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3oh2")
+text = "Try Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

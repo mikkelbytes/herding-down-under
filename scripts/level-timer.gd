@@ -1,8 +1,9 @@
 extends Control
 
-@export var time_left_seconds: int = 120  # Starting countdown time in seconds
+@export var time_left_seconds: int = 10  # Starting countdown time in seconds
 @onready var timer: Timer = $Timer
 @onready var label: RichTextLabel = $Label
+const game_over_trial_path = "res://scenes/game_over_trial.tscn"
 
 func _ready() -> void:
 	timer.wait_time = 1.0
@@ -18,7 +19,7 @@ func _on_timer_timeout() -> void:
 		update_label()
 	else:
 		timer.stop()
-		## change to gameover scene
+		get_tree().change_scene_to_file(game_over_trial_path)
 		
 func update_label() -> void:
 	var minutes: int = time_left_seconds / 60

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2fr86ucp04te"]
 
-[ext_resource type="Script" uid="uid://cgo1xwrjp6riw" path="res://cow.gd" id="1_8skmv"]
+[ext_resource type="Script" uid="uid://cgo1xwrjp6riw" path="res://scripts/cow.gd" id="1_8skmv"]
 [ext_resource type="Texture2D" uid="uid://bnofi4i5naayj" path="res://assets/Cattle/a_cow_1r.png" id="1_hh455"]
 [ext_resource type="Texture2D" uid="uid://1kytaagpm2ln" path="res://assets/Cattle/cow_1.png" id="1_yj05v"]
 [ext_resource type="Texture2D" uid="uid://6aum3q8dqwjy" path="res://assets/Cattle/a_cow_2r.png" id="2_8skmv"]
