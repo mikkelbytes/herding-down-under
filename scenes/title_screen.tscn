@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1ihg5v71oke0"]
 
-[ext_resource type="Script" uid="uid://kq58jts7e065" path="res://scenes/title_screen.gd" id="1_mgrm8"]
+[ext_resource type="Script" uid="uid://kq58jts7e065" path="res://scripts/title_screen.gd" id="1_mgrm8"]
 [ext_resource type="Texture2D" uid="uid://dadabsv0kqons" path="res://assets/UI/title.png" id="2_s4lrb"]
 [ext_resource type="FontFile" uid="uid://f4lf2jlkrbr1" path="res://assets/Fonts/dogica/TTF/dogicapixel.ttf" id="3_dc4i4"]
 [ext_resource type="AudioStream" uid="uid://2psd4q4v8fa" path="res://assets/Audio/intro-synth.mp3" id="4_mgrm8"]

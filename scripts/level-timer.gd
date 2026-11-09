@@ -1,6 +1,6 @@
 extends Control
 
-@export var time_left_seconds: int = 10  # Starting countdown time in seconds
+@export var time_left_seconds: int = 30  # Starting countdown time in seconds
 @onready var timer: Timer = $Timer
 @onready var label: RichTextLabel = $Label
 const game_over_trial_path = "res://scenes/game_over_trial.tscn"
